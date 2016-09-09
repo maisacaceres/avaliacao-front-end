@@ -1,0 +1,9 @@
+{
+  "name": "maisa",
+  "version": "1.0.0",
+  "description": "Avaliacao Maisa",
+  "dependencies": {
+    "angular": "^1.4.0",
+    "angular-material": "^1.0.0"
+  }
+}

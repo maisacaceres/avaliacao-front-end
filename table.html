@@ -1,0 +1,31 @@
+<md-toolbar class="md-table-toolbar md-default">
+  <div class="md-toolbar-tools">
+    <span>Mail</span>
+    <span flex></span>
+    <div class="error" ng-show="showError">{{errorMessage}}</div>
+    <md-input-container>
+      <input type="text" ng-model="name" placeholder="Search by user name" ng-keyup="$event.keyCode == 13 ? searchUser(name) : null" />
+    </md-input-container>
+  </div>
+</md-toolbar>
+
+<md-table-container>
+  <table data-md-table>
+    <thead md-head>
+      <tr md-row>
+        <th md-column><span>User Name</span></th>
+        <th md-column><span>Inbox</span></th>
+        <th md-column><span>Size</span></th>
+      </tr>
+    </thead>
+    <tbody md-body>
+      <tr md-row data-ng-repeat="user in users.content">
+        <td md-cell>{{user.name}}</td>
+        <td md-cell md-numeric>{{user.inbox}}</td>
+        <td md-cell md-numeric>{{user.size}}</td>
+      </tr>
+    </tbody>
+  </table>
+</md-table-container>
+
+<md-table-pagination md-limit="query.limit" md-page="query.page" md-total="{{users.totalElements}}" md-on-paginate="getUsers" md-page-select></md-table-pagination>
