@@ -1,0 +1,13 @@
+'use strict';
+
+angular.module('maisaApp')
+  .service('userService', function () { /* ... */ })
+  .controller('userCtrl', ['$scope', 'userService', function ($scope, userService) {
+  
+  getUsers();
+
+  function getUsers () {	
+      $scope.users = userService.getAllUsers();
+  }
+
+}]);

@@ -1,8 +1,6 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="maisaApp">
-
   <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -10,20 +8,20 @@
     <title>Maisa</title>
 
     <link href="bower_components/angular-material/angular-material.css" rel="stylesheet" type="text/css"/>
-    <link href="md-data-table.min.css" rel="stylesheet" type="text/css"/>
-    <link href="app.css" rel="stylesheet" type="text/css"/>
+    <link href="css/md-data-table.min.css" rel="stylesheet" type="text/css"/>
+    <link href="css/app.css" rel="stylesheet" type="text/css"/>
 
   </head>
 
   <body layout="column">
 
     <md-toolbar>
-      <div class="md-toolbar-tools">
-        <div class="md-title">Maisa</div>
-      </div>
+        <h2 class="md-toolbar-tools">
+          <span>User list</span>
+        </h2>
     </md-toolbar>
 
-    <md-content laout="column" flex ng-controller="usersCtrl">
+    <md-content layout="column" flex ng-controller="userControler">
 
       <md-card ng-include="'info.html'"></md-card>
 
@@ -35,10 +33,10 @@
     <script type="text/javascript" src="bower_components/angular-animate/angular-animate.min.js"></script>
     <script type="text/javascript" src="bower_components/angular-aria/angular-aria.min.js"></script>
     <script type="text/javascript" src="bower_components/angular-material/angular-material.min.js"></script>
-    <script type="text/javascript" src="md-data-table.min.js"></script>
+    <script type="text/javascript" src="script/md-data-table.min.js"></script>
 
-    <script type="text/javascript" src="app.js"></script>
-    <script type="text/javascript" src="usersCtrl.js"></script>
-
+    <script type="text/javascript" src="script/app.js"></script>
+    <script type="text/javascript" src="script/userService.js"></script>
+    <script type="text/javascript" src="script/userControler.js"></script>
   </body>
 </html>

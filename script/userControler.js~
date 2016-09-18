@@ -1,0 +1,50 @@
+'use strict';
+
+angular.module("maisaApp")
+  .controller('userControler', function ($scope, userService) {
+
+  $scope.query = {
+    limit: 20,
+    page: 1
+  };
+
+  getUsers(); 
+  getInbox();
+  getSize();
+
+  function getUsers () {	
+      userService.getAllUsers($scope.query.page)
+        .then(function (body) {
+          $scope.users = body.data;
+      })
+  }
+
+  function getUserByName (name) {
+    if (name != null) {
+      userService.getUser(name)
+        .then(function (body) {
+          $scope.users.content = [body.data];
+        })
+    }
+    else {
+      getUsers(); 
+    }
+  }
+
+  function getInbox () {
+    userService.getBiggerInbox()
+      .then(function (body) {
+        $scope.biggerInbox = body.data.name;
+      })
+  }
+
+  function getSize () {
+    userService.getBiggerSize()
+      .then(function (body) {
+        $scope.biggerSize = body.data.name;
+      })
+  }
+
+  $scope.getUserByName = getUserByName;
+
+});
