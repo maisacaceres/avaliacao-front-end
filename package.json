@@ -3,10 +3,7 @@
   "version": "1.0.0",
   "description": "Avaliacao Maisa",
   "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "git://github.com/maisacaceres/avaliacao-frontend.git"
-  },
+  
   "devDependencies": {
     "bower": "^1.3.9",
     "grunt": "^0.4.5",
@@ -16,9 +13,5 @@
     "grunt-contrib-watch": "^0.6.1",
     "jshint-stylish": "^1.0.0",
     "load-grunt-tasks": "^0.6.0"
-  },
-  "dependencies": {
-    "angular": "^1.4.0",
-    "angular-material": "^1.0.0"
   }
 }
